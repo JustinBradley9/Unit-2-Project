@@ -7,7 +7,7 @@ const Character = new Schema({
     allignment: String,
     img: String,
     gender: String,
-    level: String,
+    level: Number,
     background: String,
     class: [{
         type: Schema.Types.ObjectId,
