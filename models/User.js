@@ -5,7 +5,6 @@ const User = new Schema({
     name: String,
     profilePic: String,
     typeOfPlayer: String,
-    img: String,
     characters: [{
         type: Schema.Types.ObjectId,
         ref: 'Character'
