@@ -34,7 +34,7 @@ User.deleteMany({})
                     shield: "Do I look like I need a shield",
                     accesories: "Mask"
                 })
-                .then((character1) => {
+                .then((class1) => {
                     const myStats = Stats.create({
                         Strength: 17,
                         Dexterity: 4,
@@ -45,17 +45,19 @@ User.deleteMany({})
                         Luck: 17,
                         Charisma: 2,
                         Faith: 20
-                    }).then((statstuff, classtuff) => {
+                    }).then((statstuff) => {
                         character1.stats.push(statstuff)
-                        character1.class.push(classtuff)
+                        character1.class.push(class1)
                     })
 
-            .then((character) => {
-                userguy.characters.push(character)
+            .then(() => {
+                userguy.characters.push(character1)
             })
             Promise.all([firstCharacter, myClass, myStats])
             .then(()=>{
-                User.save()
+                userguy.save()
+                console.log(userguy)
+
             })
         })
     })
