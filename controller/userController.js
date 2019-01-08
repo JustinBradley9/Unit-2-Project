@@ -1,4 +1,7 @@
 User = require("../models/User")
+Character = require("../models/Character")
+Stats = require('../models/Stats')
+Class = require('../models/Class')
 
 const userController = {
     index: (req, res) => {
@@ -23,7 +26,7 @@ const userController = {
     },
     show: (req, res) => {
       const UserId = req.params.id
-      User.findById(UserId).then((User) => {
+      User.findById(UserId).populate('characters').then((User) => {
         console.log(User)
         res.render('apps/show', { User })
       })

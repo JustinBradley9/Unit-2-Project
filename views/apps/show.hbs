@@ -1,0 +1,15 @@
+
+<div>
+    {{!-- <a href="/{{User._id}}/edit"><button class="btn">Edit</button></a> --}}
+
+    <a href="/"><button class="btn">Find other Users </button></a>
+    <h1>{{User.name}}</h1>
+    <p>{{User.typeOfPlayer}}</p>
+    <img src='{{{User.profilePic}}}' alt="{{User.name}}">
+    <a href="/{{User._id}}/characters">
+    <button class="btn">View created characters</button></a>
+
+    {{!-- <form action="/{{User._id}}?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete</button>
+    </form> --}}
+</div>
