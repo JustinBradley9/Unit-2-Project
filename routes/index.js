@@ -12,11 +12,11 @@ router.patch('/:id', userController.update)
 router.delete('/:id', userController.delete)
 
 router.get('/:id/characters', characterController.index)
-router.get('/:id/character/new', characterController.new)
-router.post('/:id/character', characterController.create)
-router.get('/:id/character/:characterId', characterController.show)
-router.get('/:id/character/:characterId/edit', characterController.edit)
-router.patch('/:id/character/:characterId', characterController.update)
-router.delete('/:id/character/:characterId', characterController.delete)
+router.get('/:id/characters/new', characterController.new)
+router.post('/:id/characters', characterController.create)
+router.get('/:id/characters/:charactersId', characterController.show)
+router.get('/:id/characters/:charactersId/edit', characterController.edit)
+router.patch('/:id/characters/:charactersId', characterController.update)
+router.delete('/:id/characters/:charactersId', characterController.delete)
 
 module.exports = router

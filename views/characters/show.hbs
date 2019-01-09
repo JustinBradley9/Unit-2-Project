@@ -1,8 +1,24 @@
 
 <div>
     <a href="/"><button class="btn">Find other Users </button></a>
+    <a href="/{{UserId}}/characters"><button class="btn">Find other Characters </button></a>
+    <a href="/{{UserId}}/characters/{{Character._id}}/edit"><button class="btn">Edit Character</button></a>
     <h1>{{Character.name}}</h1>
-    <p>{{Character.gender}}</p>
-    <img src='{{{Character.img}}}' alt="{{Character.name}}">
-
+    <h2>{{Character.race}}</h2>
+    <h2>{{Character.allignment}}</h2>
+    <img src={{Character.img}} alt="" height="300vh" width="300vw">
+    <h2>{{Character.gender}}</h2>
+    <h2>{{Character.level}}</h2>
+    <h2>{{Character.background}}</h2>
+    <h2>{{Character.class}}</h2>
+    <h2>{{Character.stats}}</h2>
 </div>
+
+
+    {{!-- name: String,
+    race: String,
+    allignment: String,
+    img: String,
+    gender: String,
+    level: Number,
+    background: String, --}}
