@@ -16,10 +16,9 @@ const userController = {
         console.log(req.body)
         User.create({
             name: req.body.name,
-            user: req.body.user,
-            content: req.body.content,
-            img: req.body.img,
-            createdAt: req.body.createdAt
+            typeOfPlayer: req.body.typeOfPlayer,
+            profilepic: req.body.profilepic,
+            characters: req.body.characters
         }).then(newUser => {
             res.redirect('/')
         })
@@ -39,7 +38,7 @@ const userController = {
     update: (req, res) => {
         const UserId = req.params.id
         console.log(req.body)
-        User.findByIdAndUpdate(UserId, req.body, {new: true}).then((User) => {
+        User.findByIdAndUpdate(UserId, req.body, {new: true}).then(() => {
             res.redirect(`/${UserId}`)
         })
     },
