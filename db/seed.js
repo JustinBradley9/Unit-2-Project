@@ -47,6 +47,8 @@ User.deleteMany({})
                         Faith: 20
                     }).then((statstuff) => {
                         character1.stats.push(statstuff)
+                        console.log(statstuff)
+                        console.log(class1)
                         character1.class.push(class1)
                     })
 
@@ -57,7 +59,6 @@ User.deleteMany({})
             .then(()=>{
                 userguy.save()
                 console.log(userguy)
-
             })
         })
     })

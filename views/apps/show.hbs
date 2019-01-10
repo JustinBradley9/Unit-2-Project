@@ -1,16 +1,17 @@
 
 <div>
-    {{!-- <a href="/{{User._id}}/edit"><button class="btn">Edit</button></a> --}}
 
     <a href="/"><button class="btn">Find other Users </button></a>
      <a href="/{{User._id}}/edit"><button class="btn">Edit profile </button></a>
     <h1>{{User.name}}</h1>
     <p>{{User.typeOfPlayer}}</p>
-    <img src='{{{User.profilePic}}}' alt="{{User.name}}">
-    <a href="/{{User._id}}/characters">
-    <button class="btn">View created characters</button></a>
+    <img src='{{{User.profilePic}}}' alt="{{User.name}}"> <br>
+    <a href="/{{User._id}}/characters"><button class="btn">View created characters</button></a> <br>
+    {{#each User.characters}}
+<h1>{{name}}</h1>
+    {{/each}}
 
-    {{!-- <form action="/{{User._id}}?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Delete</button>
-    </form> --}}
+    <form action="/{{User._id}}?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete My Handsome Face, If You Dare</button>
+    </form>
 </div>
