@@ -1,12 +1,12 @@
 # Unit-2-Project
 
-#During this project we used mehn in order to build a full-stack app
+# During this project we used mehn in order to build a full-stack app
 - My project was a dungeons and dragons character creator
 - It allows currently users to create their own characters and later updates will allow for characters to be able to form groups, search for characters based off race, allignment, class, or level as well as do online campaigns.
 - The app focuses on very little front end coding and more on the back end
 
 
-#User Stories
+# User Stories
 - User clicks on link and visits the the main page of site which displays all users profile names and are able to create their own
 - User is then able to select profile by name and then view all allowed information on profile as well as the names of all the created characters names
 - the User is then able to either go back and view other profiles or select on list of characters in order to view the characters full list
