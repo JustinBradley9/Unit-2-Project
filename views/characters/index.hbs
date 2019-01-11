@@ -1,3 +1,7 @@
+
+<h1><a href="/{{UserId}}/characters/new">Create A New Character</a></h1>
 {{#each characters}}
-   <a href="/{{../UserId}}/characters/{{_id}}"><h2>{{name}}</h2></a>
+<a href="/{{../UserId}}/characters/{{_id}}"><div style="border: solid black; padding: 20px; display:flex; justify-content:space-around;">
+   <h2>{{name}}</h2>
+</div></a>
 {{/each}}

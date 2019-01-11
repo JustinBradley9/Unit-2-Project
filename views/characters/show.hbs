@@ -1,8 +1,13 @@
 
 <div>
     <a href="/"><button class="btn">Find other Users </button></a>
-    <a href="/{{UserId}}/characters"><button class="btn">Find other Characters </button></a>
+    <a href="/{{UserId}}/characters"><button class="btn">Find other Characters </button></a> <br>
     <a href="/{{UserId}}/characters/{{Character._id}}/edit"><button class="btn">Edit Character</button></a>
+    <a href="/{{UserId}}/characters/{{Character._id}}/editstats"><button class="btn">Edit Stats</button></a>
+    <a href="/{{UserId}}/characters/{{Character._id}}/editclass"><button class="btn">Edit Class</button></a>
+    <form action="/{{UserId}}/characters/{{Character._id}}?_method=DELETE" method="POST">
+    <button class="btn" type="submit">Banish This Character to the Abyss to never be seen or heard from again. Unless someone recreates the exact same character.</button>
+    </form>
     <h1>{{Character.name}}</h1>
     <h2>{{Character.race}}</h2>
     <h2>{{Character.allignment}}</h2>
@@ -10,15 +15,43 @@
     <h2>{{Character.gender}}</h2>
     <h2>{{Character.level}}</h2>
     <h2>{{Character.background}}</h2>
-    <h2>{{Character.class}}</h2>
-    <h2>{{Character.stats}}</h2>
+{{#each Character.class}}
+<h1>Class: {{classname}}</h1>
+<h1>Main Weapon: {{mainweapon}}</h1>
+<h1>Offhand Weapon: {{offhandweapon}}</h1>
+<h1>Armor: {{armor}}</h1>
+<h1>Shield: {{shield}}</h1>
+<h1>Accesories: {{accesories}}</h1>
+{{/each}}
+    {{#each Character.stats}}
+<h1>Strength: {{Strength}}</h1>
+<h1>Dexterity: {{Dexterity}}</h1>
+<h1>Agility: {{Agility}}</h1>
+<h1>Constitution: {{Constitution}}</h1>
+<h1>Intellegence: {{Intellegence}}</h1>
+<h1>Wisdom: {{Wisdom}}</h1>
+<h1>Luck: {{Luck}}</h1>
+<h1>Charisma: {{Charisma}}</h1>
+<h1>Faith: {{Faith}}</h1>
+
+    {{/each}}
 </div>
 
 
-    {{!-- name: String,
-    race: String,
-    allignment: String,
-    img: String,
-    gender: String,
-    level: Number,
-    background: String, --}}
+    {{!-- Strength: Number,
+    Dexterity: Number,
+    Agility: Number,
+    Constitution: Number,
+    Intellegence: Number,
+    Wisdom: Number,
+    Luck: Number,
+    Charisma: Number,
+    Faith: Number
+
+
+    classname: String,
+    mainweapon: String,
+    offhandweapon: String,
+    armor: String,
+    shield: String,
+    accesories: String --}}

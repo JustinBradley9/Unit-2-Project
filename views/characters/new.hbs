@@ -1,0 +1,28 @@
+<form action="/{{UserId}}/characters" method="POST">
+    <input type="text" name="name" placeholder="Name" value="">
+    <input type="text" name="allignment" placeholder="allignment" value="">
+    <input type="text" name="img" placeholder="img" value="">
+    <input type="text" name="gender" placeholder="Gender" value="">
+    <input type="text" name="Level" placeholder="Level" value="">
+    <input type="text" name="BackGround" placeholder="Background" value="">
+    <button type="submit">Post</button>
+</form>
+
+
+{{!-- const Character = new Schema({
+    name: String,
+    race: String,
+    allignment: String,
+    img: String,
+    gender: String,
+    level: Number,
+    background: String,
+    class: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Class'
+    }],
+    stats: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Stats'
+    }]
+}); --}}

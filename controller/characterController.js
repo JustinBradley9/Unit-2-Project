@@ -19,22 +19,24 @@ const charactersController = {
     create: (req, res) => {
         const UserId = req.params.id
         User.findById(UserId)
-        .then((User) => {
-            Characters.create(req.body)
-            .then((characters) => {
-                User.Characters.push(characters)
-                User.save()
-                res.redirect(`/${User._id}/characters`)
+        .then((Users) => {
+            Character.create(req.body)
+            .then((newcharacter) => {
+                Users.characters.push(newcharacter)
+                Users.save()
+                res.redirect(`/`)
             })
         })
     },
     show: (req, res) => {
-        const CharactersId = req.params.charactersId
+        console.log("req",req.params)
+        const CharacterId = req.params.charactersId
         const UserId = req.params.id
-        Character.findById(CharactersId).populate('stats', 'class').then((Character) => {
+        Character.findById(CharacterId).populate('class').populate('stats').then((Character) => {
+            // console.log("Character",Character)
             res.render('characters/show', { Character: Character, UserId: UserId })
         }).catch((help) => {
-            console.log(help)
+            // console.log(help)
         })
     },
     edit: (req, res) => {
@@ -44,17 +46,16 @@ const charactersController = {
     },
     update: (req, res) => {
         const UserId = req.params.id
-        const CharactersId = req.params.CharactersId
-        console.log(CharactersId)
-        Characters.findByIdAndUpdate(CharactersId, req.body, {new: true})
-        .then((Characters) => {
-            res.redirect(`/${UserId}/characters/${CharactersId}`)
+        const charactersId = req.params.charactersId
+        Character.findByIdAndUpdate(charactersId, req.body, {new: true})
+        .then(() => {
+            res.redirect(`/${UserId}/characters/${charactersId}`)
         })
     },
     delete: (req, res) => {
         const UserId = req.params.id
         const charactersId = req.params.charactersId
-        characters.findByIdAndDelete(charactersId)
+        Character.findByIdAndDelete(charactersId)
         .then(() => {
             res.redirect(`/${UserId}/characters`)
         })
