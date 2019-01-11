@@ -17,7 +17,7 @@ const userController = {
         User.create({
             name: req.body.name,
             typeOfPlayer: req.body.typeOfPlayer,
-            profilepic: req.body.profilepic,
+            profilePic: req.body.profilePic,
             characters: req.body.characters
         }).then(newUser => {
             res.redirect('/')
